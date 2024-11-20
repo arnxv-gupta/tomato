@@ -6,18 +6,15 @@ import userRouter from './routes/userRoute.js';
 import 'dotenv/config';
 import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
-// App config
+
 const app = express();
 const port = 4000;
 
-// Middleware
 app.use(express.json());
 app.use(cors());
 
-// DB connection
 connectdb();
 
-// API End Point
 app.use("/api/food", foodRouter);
 app.use('/images',express.static('uploads'));
 app.use("/api/user", userRouter)
